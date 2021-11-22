@@ -1,48 +1,48 @@
-When were the Cincinnati Reds founded?
-1903
-1881
-1872
-1921
+The Cincinnati Reds were founded in which of the following years?
+<html><u><font size = 4, color = 'gray'>1872</font></u></html>
+<html><u><font size = 4, color = 'gray'>1881</font></u></html>
+<html><u><font size = 4, color = 'gray'>1903</font></u></html>
+<html><u><font size = 4, color = 'gray'>1921</font></u></html>
 2
 5
 Reds
-Who was the first Reds pitcher to throw a perfect game?
-Tom Seaver 
-Jim Maloney
-Tom Browning
-Homer Bailey 
+Which of the following was the first Reds pitcher to throw a perfect game?
+<html><u><font size = 4, color = 'gray'><center>Tom<br>Seaver</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Jim<br>Maloney</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Tom<br>Browning</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Homer<br>Bailey</center></font></u></html>
 3
 10
-Reds 
+Reds
 Which Bengals player legally changed his name to match his jersey number?
-Chad Johnson
-Ken Anderson
-Boomer Esiason
-A.J. Green
+<html><u><font size = 4, color = 'gray'><center>Chad<br>Johnson</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Ken<br>Anderson</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Boomer<br>Esiason</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>A.J.<br>Green</center></font></u></html>
 1
 5
 Bengals
-Which of the following Cincinnati wide receivers was the tallest?
-A.J. Geen
-Chris Collinsworth
-Chad Johnson
-Carl Pickens 
+Which of the following Cincinnati Bengals wide receivers was the tallest?
+<html><u><font size = 4, color = 'gray'><center>A.J.<br>Geen</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Chris<br>Collinsworth</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Chad<br>Johnson</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Carl<br>Pickens</center></font></u></html>
 2
 10
-Bengals 
-What is the name of the FC Cincinnati Stadium?
-Fifth Third Stadium 
-TQL Stadium 
-Nippert Stadium
-Paul Brown Stadium
+Bengals
+What is the name of the new FC Cincinnati Stadium built in OTR?
+<html><u><font size = 4, color = 'gray'><center>Fidelity</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>TQL</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Nippert</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>Paul Brown</center></font></u></html>
 2
 5
-FC Cincinnati 
+FC Cincinnati
 How many LED strips make up the front of the FC Cincinnati Stadium?
-1,000 
-513 
-755
-1,250
+<html><u><font size = 4, color = 'gray'><center>223</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>513</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>755</center></font></u></html>
+<html><u><font size = 4, color = 'gray'><center>1,000</center></font></u></html>
 2
 10
-FC Cincinnati 
+FC Cincinnati

@@ -9,7 +9,8 @@ public class Game implements ActionListener
 {
   //initializing GUI elements and arraylist.
   JLabel welcome;
-  JLabel triviaLabel;
+  JLabel categoryLabel; 
+  JLabel questionLabel;
   JButton button1;
   JButton button2;
   JButton button3;
@@ -53,11 +54,15 @@ public class Game implements ActionListener
   Game () {
     JFrame frame = new JFrame("Cincy Sports Trivia");
     frame.setLayout(new FlowLayout());
-    frame.setSize(750,200);
+    frame.setSize(540,250);
     
     //setting the first labels equal to question = 0
     welcome = new JLabel("Welcome to the game!");
-    triviaLabel = new JLabel("In the " + trivia.get(questionNumber).getCategory() + " category, the question is: " + trivia.get(questionNumber).getQuestion() + " It is worth " + Integer.toString(trivia.get(questionNumber).getPoints()) + " points.");
+    welcome.setFont(new Font("Arial", Font.BOLD, 20));
+    categoryLabel = new JLabel("In the " + trivia.get(questionNumber).getCategory() + " category, the " + Integer.toString(trivia.get(questionNumber).getPoints()) + " point question is: ");
+    
+    questionLabel = new JLabel(trivia.get(questionNumber).getQuestion());
+    questionLabel.setFont(new Font("Arial", Font.BOLD, 12));
     
     //adding in the first option buttons.
     button1 = new JButton(trivia.get(questionNumber).getOption1());
@@ -71,13 +76,14 @@ public class Game implements ActionListener
     
     //adding the first score and next buttons.
     scoreLabel = new JLabel("Your score is: " + score);
-    nextButton = new JButton("Next Question");
+    nextButton = new JButton("<html><i>Next Question</i></html>");
     nextButton.addActionListener(this);
-    feedbackLabel = new JLabel("Click a button to input your guess.");
+    feedbackLabel = new JLabel("Click an option above to input your answer.");
 
     //adding everything to the frame.
     frame.add(welcome);
-    frame.add(triviaLabel);
+    frame.add(categoryLabel);
+    frame.add(questionLabel);
     frame.add(button1);
     frame.add(button2);
     frame.add(button3);
@@ -95,30 +101,30 @@ public void actionPerformed(ActionEvent ae) {
       playerGuess = 1; //set an integer for the guess
       guess(playerGuess); //go to the guess function
     } else {
-      feedbackLabel.setText("You already answered this question! Move on to the next one by clicking 'Next Question'"); //if you have answered the question, dont do anything and prompt for the next one.
+      feedbackLabel.setText("<html><font color = 'red'>You already answered this question! Click <i>'Next Question'</i></font></html>"); //if you have answered the question, dont do anything and prompt for the next one.
     }
   } else if(ae.getActionCommand().equals(trivia.get(questionNumber).getOption2())) {
       if(questionAnswered == false) {
         playerGuess = 2;
         guess(playerGuess);
       } else {
-        feedbackLabel.setText("You already answered this question! Move on to the next one by clicking 'Next Question'");
+        feedbackLabel.setText("<html><font color = 'red'>You already answered this question! Click <i>'Next Question'</i></font></html>");
       }
   } else if(ae.getActionCommand().equals(trivia.get(questionNumber).getOption3())) {
       if(questionAnswered == false) {
         playerGuess = 3;
         guess(playerGuess);
       } else {
-        feedbackLabel.setText("You already answered this question! Move on to the next one by clicking 'Next Question'");
+        feedbackLabel.setText("<html><font color = 'red'>You already answered this question! Click <i>'Next Question'</i></font></html>");
       }
   } else if(ae.getActionCommand().equals(trivia.get(questionNumber).getOption4())) {
       if(questionAnswered == false) {
         playerGuess = 1;
         guess(playerGuess);
       } else {
-        feedbackLabel.setText("You already answered this question! Move on to the next one by clicking 'Next Question'");
+        feedbackLabel.setText("<html><font color = 'red'>You already answered this question! Click <i>'Next Question'</i></font></html>");
       }
-  } else if(ae.getActionCommand().equals("Next Question")) {
+  } else if(ae.getActionCommand().equals("<html><i>Next Question</i></html>")) {
       if(questionAnswered == true) { //if the user has answered the question
         questionNumber++;
         update(); //update the GUI for the next question
@@ -132,7 +138,7 @@ public void guess(int pGuess) {
     if(pGuess == trivia.get(questionNumber).getAnswer()) { //if the players guess is correct
       score = score + trivia.get(questionNumber).getPoints(); //add to the score and update
       scoreLabel.setText("Your score is: " + score);
-      feedbackLabel.setText("Congrats, you got it right! Please move on to the next question.");
+      feedbackLabel.setText("<html><font color = 'green'>Congrats, you got it right! Please move on to the next question.</font><html>");
       questionAnswered = true; //the player has answered the question
     } else {
       feedbackLabel.setText("Sorry, you got it wrong. Try again on the next question!"); //if theyre wrong, tell them, but they have still answered the question.
@@ -142,15 +148,17 @@ public void guess(int pGuess) {
 
 public void update(){
   if(questionNumber < 6) { //if there are still questions, reset the gui with the new question and set the questionAnswered back to false.
-     triviaLabel.setText("In Category " + trivia.get(questionNumber).getCategory() + ", the question is: " + trivia.get(questionNumber).getQuestion() + " It is worth " + Integer.toString(trivia.get(questionNumber).getPoints()) + " points.");
+    categoryLabel.setText("In the " + trivia.get(questionNumber).getCategory() + " category, the " + Integer.toString(trivia.get(questionNumber).getPoints()) + " point question is: ");
+    questionLabel.setText(trivia.get(questionNumber).getQuestion());
+    
     button1.setText(trivia.get(questionNumber).getOption1());
     button2.setText(trivia.get(questionNumber).getOption2());
     button3.setText(trivia.get(questionNumber).getOption3());
     button4.setText(trivia.get(questionNumber).getOption4());
-    feedbackLabel.setText("Click a button to input your guess.");
+    feedbackLabel.setText("Click an option above to input your answer.");
     questionAnswered = false;
   } else { //otherwise, we have no more questions so the game is over.
-    feedbackLabel.setText("The game is over!"); 
+    feedbackLabel.setText("<html> <font color = 'blue', size = 20> The game is <b>over</b>! </font></html>");
   }
 }
 }
