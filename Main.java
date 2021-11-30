@@ -1,3 +1,6 @@
+//@author Devin Fish, Maria Staubach, Evan Wood, Riley Smith
+//@version 11/30/2021
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;

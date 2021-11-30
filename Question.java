@@ -1,3 +1,8 @@
+//@author Devin Fish, Maria Staubach, Evan Wood, Riley Smith
+//@version 11/30/2021
+//@param initializes questions and options
+//@return returns questions and options 
+
 public class Question {
   private String question;
   private String opt1;

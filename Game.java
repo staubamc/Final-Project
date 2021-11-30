@@ -1,3 +1,8 @@
+//@author Devin Fish, Maria Staubach, Evan Wood, Riley Smith
+//@version 11/30/2021
+//@param initializes the game
+//@return starts game
+
 import java.awt.*; //importing all the classes we need.
 import java.awt.event.*;
 import java.io.*;
@@ -20,6 +25,7 @@ public class Game implements ActionListener
   JLabel feedbackLabel;
   int questionNumber = 0;
   int score = 0;
+  String playerName;
   boolean questionAnswered = false;
   ArrayList<Question> trivia = new ArrayList<Question>(); { 
 
@@ -38,11 +44,14 @@ public class Game implements ActionListener
         int answer = Integer.parseInt(reader.readLine());
         int points = Integer.parseInt(reader.readLine());
         String category = reader.readLine();
+
+
         //then add a new question to the trivia arraylist
         trivia.add(new Question(question, option1, option2, option3, option4, answer, points, category));
       }
       reader.close();
     } 
+
     //catch statement
     catch (IOException exception) {
         System.out.println("There was an error." + exception);
@@ -55,9 +64,11 @@ public class Game implements ActionListener
     JFrame frame = new JFrame("Cincy Sports Trivia");
     frame.setLayout(new FlowLayout());
     frame.setSize(540,250);
+
+    playerName = JOptionPane.showInputDialog("Hello player, please enter your name.");
     
     //setting the first labels equal to question = 0
-    welcome = new JLabel("Welcome to the game!");
+    welcome = new JLabel("Welcome to the game, " + playerName + "!");
     welcome.setFont(new Font("Arial", Font.BOLD, 20));
     categoryLabel = new JLabel("In the " + trivia.get(questionNumber).getCategory() + " category, the " + Integer.toString(trivia.get(questionNumber).getPoints()) + " point question is: ");
     
@@ -93,6 +104,7 @@ public class Game implements ActionListener
     frame.add(nextButton);
     frame.setVisible(true);
   }
+
   //ActionListener Function
 public void actionPerformed(ActionEvent ae) {
   int playerGuess;
@@ -159,6 +171,28 @@ public void update(){
     questionAnswered = false;
   } else { //otherwise, we have no more questions so the game is over.
     feedbackLabel.setText("<html> <font color = 'blue', size = 20> The game is <b>over</b>! </font></html>");
+     
+      // attempting to write scores into new file using append method from instructions
+        try {
+
+          //creates new file if file does not already exist
+        File f1 = new File("scores.txt");
+        if(!f1.exists()) {
+        f1.createNewFile();
+         }
+
+         FileWriter fileWritter = new FileWriter(f1.getName(),true);
+         BufferedWriter bw = new BufferedWriter(fileWritter);
+         //printing scores to new line
+         bw.write(playerName + " " + Integer.toString(score) + "\n");
+         bw.close();
+         System.out.println("Done");
+         nextButton.setVisible(false);
+      } 
+      //to catch errors
+      catch(IOException e){
+         e.printStackTrace();
+    }
   }
 }
 }
